@@ -37,9 +37,7 @@ Convierte en factor la columna seeds, respetando las etiquetas:
 
 ```{r}
 df_seeds$tipo <- factor(df_seeds$tipo,
-levels = c(1,2,3),
-labels = c("Kama", "Rosa", "Canadian"))
-head(df_seeds)
+labels=c("Kama", "Rosa", "Canadian"))
 ```
 
 #### PREGUNTA 3
@@ -121,7 +119,7 @@ Crea un modelo que me permita clasificar si una semilla es de tipo Kama o no con
 **Respuesta**:
 
 ```{r}
-model <- glm(df_seeds_train, formula=is_kama~perimetro+compacto+longitud+coeficient.asimetria+longitud.ranura, family=binomial())
+model <- glm(df_seeds_train, formula=is_kama~area+perimetro+compacto+longitud+coeficient.asimetria+longitud.ranura, family=binomial())
 
 summary(model)
 ```
